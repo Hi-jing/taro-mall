@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { ScrollView, View } from '@tarojs/components';
+import { ScrollView, View, Text } from '@tarojs/components';
 import { connect, Provider } from '@tarojs/redux';
 import styles from './index.module.scss';
 import action from '../../utils/action';
@@ -64,6 +64,7 @@ class Index extends Component {
   }
 
   onLoadMore = () => {
+    console.log('触发加载更多');
     const { dispatch, params } = this.props;
     const { page = 0, hasMore } = params;
     if (hasMore) {
@@ -74,18 +75,17 @@ class Index extends Component {
 
   onScroll = ({ detail }) => {
     const { scrollTop } = detail;
-
-    if (scrollTop > 0) {
-      if (!this.state.fixedHeaderStyle) {
-        this.setState({
-          fixedHeaderStyle: true,
-        });
-      }
-    } else {
-      this.setState({
-        fixedHeaderStyle: false,
-      });
-    }
+    // if (scrollTop > 0) {
+    //   if (!this.state.fixedHeaderStyle) {
+    //     this.setState({
+    //       fixedHeaderStyle: true,
+    //     });
+    //   }
+    // } else {
+    //   this.setState({
+    //     fixedHeaderStyle: false,
+    //   });
+    // }
   };
 
   render() {
@@ -142,44 +142,18 @@ class Index extends Component {
       </View >
     </View >;
 
+    console.log(goodsList);
     return (
-      <View className={styles.container} >
-        <FixedHeader fixedScroll={fixedHeaderStyle} />
+      <View className={styles.box}>
         <ScrollView
-          style='height:100vh;-webkit-overflow-scrolling:touch;'
-          onScrollToLower={this.onLoadMore}
-          lowerThreshold={300}
-          scrollY
-          onScroll={this.onScroll}
+          className={styles.container}
           scrollWithAnimation
+          lowerThreshold={300}
+          onScrollToLower={this.onLoadMore}
+          onScroll={this.onScroll}
+          scrollY
         >
-          <BannerSwiper id="indexBanner" imgs={swiperImgs} />
-          <Category items={categoryItems} />
-          {newUserOwn}
-          {spike}
-          {/*东家小院*/}
-          <CustomImage height={90} src={courtyardTitleImg} />
-          <View className={styles.courtyardBox} >
-            <View className={styles.row} >
-              {(courtyardList || []).slice(0, 2).map((item, index) => (
-                <TwoGrid item={item} key={index} />
-              ))}
-            </View >
-            <View className={styles.row} >
-              {(courtyardList || []).slice(2, 6).map((item, index) => (
-                <OneGrid item={item} key={index} />
-              ))}
-            </View >
-          </View >
-          {/*每日逛*/}
-          <CustomImage height={90} src={everydayTitleImg} />
-          <View className={styles.everydayBox} >
-            <View className={styles.row} >
-              {(everydayList || []).map((item, index) => (
-                <OneGrid item={item} key={index} />
-              ))}
-            </View >
-          </View >
+          {/*<FixedHeader fixedScroll={fixedHeaderStyle} />*/}
           {/*  推荐列表*/}
           <View className={styles.recommendTitle} >
             <View className={styles.recommendLineLeft} />
@@ -198,6 +172,58 @@ class Index extends Component {
         <TabBar />
       </View >
     );
+
+    // return (
+    //   <ScrollView
+    //     scrollY
+    //     scrollWithAnimation
+    //     className={styles.container}
+    //   >
+    //     <FixedHeader fixedScroll={fixedHeaderStyle} />
+    //     <BannerSwiper id="indexBanner" imgs={swiperImgs} />
+    //     <Category items={categoryItems} />
+    //     {newUserOwn}
+    //     {spike}
+    //     {/*东家小院*/}
+    //     <CustomImage height={90} src={courtyardTitleImg} />
+    //     <View className={styles.courtyardBox} >
+    //       <View className={styles.row} >
+    //         {(courtyardList || []).slice(0, 2).map((item, index) => (
+    //           <TwoGrid item={item} key={index} />
+    //         ))}
+    //       </View >
+    //       <View className={styles.row} >
+    //         {(courtyardList || []).slice(2, 6).map((item, index) => (
+    //           <OneGrid item={item} key={index} />
+    //         ))}
+    //       </View >
+    //     </View >
+    //     {/*每日逛*/}
+    //     <CustomImage height={90} src={everydayTitleImg} />
+    //     <View className={styles.everydayBox} >
+    //       <View className={styles.row} >
+    //         {(everydayList || []).map((item, index) => (
+    //           <OneGrid item={item} key={index} />
+    //         ))}
+    //       </View >
+    //     </View >
+    //     {/*  推荐列表*/}
+    //     <View className={styles.recommendTitle} >
+    //       <View className={styles.recommendLineLeft} />
+    //       <CustomImage width={26} height={26} src={upImg} />
+    //       <View className={styles.rightText} >为您推荐</View >
+    //       <View className={styles.recommendLineRight} />
+    //     </View >
+    //     <View className={styles.recommendGoodsList} >
+    //       {(goodsList || []).map((item) => (
+    //         <View className={styles.goodsItem} >
+    //           <GoodsItem key={item.id} item={item} />
+    //         </View >
+    //       ))}
+    //     </View >
+    //     <TabBar />
+    //   </ScrollView >
+    // );
   }
 }
 

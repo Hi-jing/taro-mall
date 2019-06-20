@@ -14,7 +14,7 @@
 		"dev:swan": "npm run build:swan -- --watch",
 		"dev:alipay": "npm run build:alipay -- --watch",
 		"dev:tt": "npm run build:tt -- --watch",
-		"dev:h5": "npm run build:h5 -- --watch",
+		"dev": "npm run build:h5 -- --watch",
 		"dev:rn": "npm run build:rn -- --watch"
 	},
 	"author": "",

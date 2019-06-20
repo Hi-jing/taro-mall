@@ -12,7 +12,7 @@ export default {
   state: {},
   effects: {
     * error({ payload: e }, { all, call, put }) {
-      if (e.message === '401') {
+      if (e.status === '401') {
         yield call(Taro.redirectTo, { url: '/pages/token/login' });
       } else {
         //解析传递过来的错误数据信息

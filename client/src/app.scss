@@ -1,9 +1,18 @@
 html, body {
   font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, Helvetica, Microsoft YaHei, Arial, serif;
   font-size: 20px;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  height: 100vh;
 }
 
 //删除按钮外部样式
-button{
+button {
   outline-width: 0 !important;
 }
+
+.taro_router, .taro_page {
+  height: 100%;
+  overflow-y: hidden;
+}
+

@@ -6,11 +6,11 @@ module.exports = {
   weapp: {},
   h5: {
     devServer: {
-      host: '0.0.0.0',
+      host: '192.168.2.214',
       port: 10086,
       proxy: {
         '/api': {
-          target: 'http://0.0.0.0:8080',
+          target: 'http://192.168.2.214:8080',
           pathRewrite: { '^/api': '/' },
           secure: false,
         },

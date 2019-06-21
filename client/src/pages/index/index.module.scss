@@ -1,17 +1,22 @@
-.box {
+.flexContainer {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  overflow-y: hidden;
+  justify-content: center;
+
+  background-color: #f4f4f4;//此颜色一般跟content中的背景色一致
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
+.scrollArea {
+  position: relative;
   width: 100%;
-  height: calc(1334px - 180px);
-  background-color: #0b95ff;
-  padding-bottom: 90px;
-  overflow-y: visible;
+  height: 100%;
 
   .fixHeader {
     background-color: #00c47d;
@@ -25,15 +30,8 @@
   .content {
     display: flex;
     flex-direction: column;
-  }
-
-  .toolBar {
-    background-color: rebeccapurple;
-    height: 90px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    min-height: 100%;
+    background-color: #f4f4f4;
   }
 }
 

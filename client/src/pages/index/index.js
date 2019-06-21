@@ -86,6 +86,11 @@ class Index extends Component {
     //     fixedHeaderStyle: false,
     //   });
     // }
+    console.log(detail);
+  };
+
+  onClick = () => {
+    console.log('点击了呢');
   };
 
   render() {
@@ -144,14 +149,15 @@ class Index extends Component {
 
     console.log(goodsList);
     return (
-      <View className={styles.box}>
+      <View className={styles.flexContainer} >
         <ScrollView
-          className={styles.container}
+          className={styles.scrollArea}
           scrollWithAnimation
           lowerThreshold={300}
           onScrollToLower={this.onLoadMore}
           onScroll={this.onScroll}
           scrollY
+          onClick={this.onClick}
         >
           {/*<FixedHeader fixedScroll={fixedHeaderStyle} />*/}
           {/*  推荐列表*/}
@@ -168,8 +174,8 @@ class Index extends Component {
               </View >
             ))}
           </View >
+          <TabBar />
         </ScrollView >
-        <TabBar />
       </View >
     );
 

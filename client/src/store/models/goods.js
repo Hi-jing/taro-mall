@@ -18,7 +18,7 @@ export default {
   effects: {
     * fetchList({ payload }, { all, call, put, select }) {
       try {
-        yield call(Taro.showLoading, { title: '加载中', mask: true });
+        // yield call(Taro.showLoading, { title: '加载中', mask: true });
         //暂时不用，会出现滚动穿透的问题
         if (!payload.page) {
           payload.page = 0;
@@ -49,7 +49,7 @@ export default {
       } catch (e) {
         throw new Error(e);
       } finally {
-        yield call(Taro.hideLoading);
+        // yield call(Taro.hideLoading);
       }
     },
   },

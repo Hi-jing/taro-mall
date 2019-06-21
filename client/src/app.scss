@@ -3,7 +3,7 @@ html, body {
   font-size: 20px;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  height: 100vh;
+  height: 100%;
 }
 
 //删除按钮外部样式
@@ -12,7 +12,8 @@ button {
 }
 
 .taro_router, .taro_page {
+  width: 100%;
   height: 100%;
   overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
-

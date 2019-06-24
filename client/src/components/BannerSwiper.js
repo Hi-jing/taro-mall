@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro';
 import { Swiper, SwiperItem } from '@tarojs/components';
-import CustomImage from './CustomImage';
+import CustomImage from '@/components/CustomImage';
 import styles from './BannerSwiper.module.scss';
 
 class BannerSwiper extends Component {
@@ -17,8 +17,8 @@ class BannerSwiper extends Component {
         autoplay
       >
         {imgs.map((img, index) => (
-          <SwiperItem style="width:100% !importment;" key={index} >
-            <CustomImage height={366} src={img} />
+          <SwiperItem key={index} >
+            <CustomImage src={img} />
           </SwiperItem >
         ))}
       </Swiper >

@@ -1,20 +1,9 @@
 module.exports = {
   env: {
-    NODE_ENV: '"development"',
+    NODE_ENV: '"development"'
   },
-  defineConstants: {},
+  defineConstants: {
+  },
   weapp: {},
-  h5: {
-    devServer: {
-      host: '192.168.2.214',
-      port: 10086,
-      proxy: {
-        '/api': {
-          target: 'http://192.168.2.214:8080',
-          pathRewrite: { '^/api': '/' },
-          secure: false,
-        },
-      },
-    },
-  },
-};
+  h5: {}
+}

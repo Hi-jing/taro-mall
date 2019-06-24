@@ -1,4 +1,4 @@
 export default {
-  urlPrefix: 'http://192.168.2.214:10086/api/',
+  urlPrefix: 'http://0.0.0.0:10086/api/',
   token: '',
 };

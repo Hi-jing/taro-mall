@@ -1,9 +1,12 @@
-import { Component } from '@tarojs/taro';
+import Taro, { Component } from '@tarojs/taro';
 import { connect } from '@tarojs/redux';
 import BannerSwiper from '@/components/BannerSwiper';
-import styles from './index.module.scss';
 import banner1 from '@/assets/banner/1.jpg';
 import banner2 from '@/assets/banner/2.jpg';
+import { ScrollView } from "@tarojs/components";
+import Category from "@/components/Category";
+import Title from "@/components/Title";
+import styles from './index.module.scss';
 
 
 @connect(() => ({}))
@@ -17,15 +20,6 @@ class Index extends Component {
     console.log(this.props, nextProps);
   }
 
-  componentWillUnmount() {
-  }
-
-  componentDidShow() {
-  }
-
-  componentDidHide() {
-  }
-
   render() {
     const swiperImgs = [banner1, banner2];
     return (
@@ -35,6 +29,8 @@ class Index extends Component {
         className={styles.index}
       >
         <BannerSwiper imgs={swiperImgs} />
+        <Title text='世界真美好呢' />
+        <Category text='主题' imgUrl={swiperImgs[0]} />
       </ScrollView >
     );
   }

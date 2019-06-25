@@ -1,11 +1,11 @@
 import Taro, { Component } from '@tarojs/taro';
-import { Text } from '@tarojs/components';
 import styles from './Title.module.scss';
+import CustomText from "@/components/CustomText";
 
 class Title extends Component {
   render() {
-    const {text = ''} = this.props;
-    return (<Text className={styles.title} >{text}</Text >);
+    const {text = '', cls} = this.props;
+    return (<CustomText text={text} cls={[styles.title, cls]} />);
   }
 }
 

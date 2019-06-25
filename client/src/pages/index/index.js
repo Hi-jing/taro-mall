@@ -29,7 +29,7 @@ class Index extends Component {
         className={styles.index}
       >
         <BannerSwiper imgs={swiperImgs} />
-        <Title text='世界真美好呢' />
+        <Title text='这是一个非常漂亮的世界呢' />
         <Category text='主题' imgUrl={swiperImgs[0]} />
       </ScrollView >
     );

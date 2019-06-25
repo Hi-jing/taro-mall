@@ -4,8 +4,8 @@ import styles from './CustomText.module.scss';
 
 class CustomText extends Component {
   render() {
-    const {text = ''} = this.props;
-    return (<Text className={styles.customText} >{text}</Text >);
+    const {text = '', cls = {}} = this.props;
+    return (<Text className={[styles.customText, cls]} >{text}</Text >);
   }
 }
 

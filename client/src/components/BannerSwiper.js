@@ -5,7 +5,7 @@ import styles from './BannerSwiper.module.scss';
 
 class BannerSwiper extends Component {
   render() {
-    const { imgs = [] } = this.props;
+    const {dataArray = []} = this.props;
     return (
       <Swiper
         className={styles.swiper}
@@ -16,9 +16,9 @@ class BannerSwiper extends Component {
         indicatorDots
         autoplay
       >
-        {imgs.map((img, index) => (
+        {dataArray.map((data = {}, index) => (
           <SwiperItem key={index} >
-            <CustomImage src={img} />
+            <CustomImage src={data.src} link={data.link} />
           </SwiperItem >
         ))}
       </Swiper >

@@ -5,4 +5,15 @@
   align-items: center;
   font-family: PingFangSC-Regular, serif;
   font-size: 24px;
+  width: 100%;
+  height: 100%;
+
+  .imgCls {
+    width: 55%;
+    height: 55%;
+  }
+
+  .text {
+    margin-top: 20px;
+  }
 }

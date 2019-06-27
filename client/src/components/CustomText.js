@@ -3,9 +3,13 @@ import { Text } from '@tarojs/components';
 import styles from './CustomText.module.scss';
 
 class CustomText extends Component {
+  onTextClick = (link) => {
+    console.log(link);
+  };
+
   render() {
-    const {text = '', cls = {}} = this.props;
-    return (<Text className={[styles.customText, cls]} >{text}</Text >);
+    const {text = '', cls = {}, link} = this.props;
+    return (<Text onClick={this.onTextClick.bind(this, link)} className={[styles.customText, cls]} >{text}</Text >);
   }
 }
 

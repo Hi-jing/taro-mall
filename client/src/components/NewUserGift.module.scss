@@ -1,0 +1,18 @@
+.newUserGift {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  .customImage {
+    &:first-child {
+      width: 50%;
+    }
+
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 25%;
+    height: 216px;
+  }
+}

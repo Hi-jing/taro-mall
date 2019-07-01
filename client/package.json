@@ -44,7 +44,8 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "rxjava-apis-user-client": "latest",
-    "rxjava-apis-goods-client": "latest"
+    "rxjava-apis-goods-client": "latest",
+    "dayjs": "1.8.14"
   },
   "devDependencies": {
     "@types/react": "^16.4.8",

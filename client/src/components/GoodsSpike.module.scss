@@ -3,6 +3,11 @@
   flex-direction: column;
   align-items: center;
 
+  .img{
+    width: 140px;
+    height: 140px;
+  }
+
   &::-webkit-scrollbar {
     display: none
   }

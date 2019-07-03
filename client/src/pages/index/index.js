@@ -1,9 +1,9 @@
-import Taro, { Component } from '@tarojs/taro';
+import { Component } from '@tarojs/taro';
 import { connect } from '@tarojs/redux';
 import BannerSwiper from '@/components/BannerSwiper';
 import banner1 from '@/assets/banner/1.jpg';
 import banner2 from '@/assets/banner/2.jpg';
-import { ScrollView } from '@tarojs/components';
+import { ScrollView, Text, View } from '@tarojs/components';
 import styles from './index.module.scss';
 import CategoryMenu from '@/components/CategoryMenu';
 
@@ -23,6 +23,9 @@ import channel from '@/assets/index/newuser/channel@2x.png';
 import exclusive from '@/assets/index/newuser/exclusive@2x.png';
 import gift from '@/assets/index/newuser/gift@2x.png';
 import Spike from '@/components/Spike';
+import CustomSwiper from '@/components/CustomSwiper';
+
+import './index.scss';
 
 @connect(() => ({}))
 class Index extends Component {
@@ -50,18 +53,40 @@ class Index extends Component {
       { src: channel },
       { src: exclusive },
     ];
-    return (
-      <ScrollView
-        scrollY
-        scrollWithAnimation
-        className={styles.index}
-      >
-        <BannerSwiper dataArray={swiperImgs} />
-        <CategoryMenu cls={styles.categoryMenu} dataArray={categoryDataArray} />
-        <NewUserGift dataArray={newUserGiftArray} />
-        <Spike dataArray={[{ src: shop, salePrice: 11800 }]} title="秒杀专场" startDate="2019-07-08 21:10:00.000" />
-      </ScrollView >
-    );
+    // return (
+    //   <ScrollView
+    //     scrollY
+    //     scrollWithAnimation
+    //     className={styles.index}
+    //   >
+    //     <BannerSwiper dataArray={swiperImgs} />
+    //     <CategoryMenu cls={styles.categoryMenu} dataArray={categoryDataArray} />
+    //     <NewUserGift dataArray={newUserGiftArray} />
+    //     <Spike dataArray={[{ src: shop, salePrice: 11800 }]} title="秒杀专场" startDate="2019-07-08 21:10:00.000" />
+    //   </ScrollView >
+    // );
+    return(
+      <View className="mui-bar mui-bar-tab" >
+        <View className="t-line" >
+          <View href="index.html" className="aui-tab-item mui-active" >
+            <Text className="mui-icon mui-icon-home" ></Text >
+            <Text className="mui-tab-label" >首页</Text >
+          </View >
+          <View href="category.html" className="aui-tab-item" >
+            <Text className="mui-icon mui-icon-extra mui-icon-extra-class" ></Text >
+            <Text className="mui-tab-label" >分类</Text >
+          </View >
+          <View className="aui-tab-item" href="car.html" >
+            <Text className="mui-icon mui-icon-extra mui-icon-extra-cart" ></Text >
+            <Text className="mui-tab-label" >购物车</Text >
+          </View >
+          <View className="aui-tab-item" href="me.html" >
+            <Text className="mui-icon mui-icon-extra mui-icon-extra-people" ></Text >
+            <Text className="mui-tab-label" >我的</Text >
+          </View >
+        </View >
+      </View >
+    )
   }
 }
 

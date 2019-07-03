@@ -48,6 +48,10 @@ spec:
       port: 5672
       protocol: TCP
       targetPort: 5672
+    - name: redis
+      port: 6379
+      protocol: TCP
+      targetPort: 6379
   type: NodePort
 ---
 apiVersion: v1
@@ -72,3 +76,12 @@ data:
             prefetch: 1
             default-requeue-rejected: true
             auto-startup: true
+      redis:
+        host: redis
+        port: 6379
+        timeout: "PT2000S"
+        pool:
+          max-idle: 8
+          min-idle: 1
+          max-active: 8
+          max-wait: -1
